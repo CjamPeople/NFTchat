@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "155175554695",
+    "firebase_url": "https://cjam-a18c2-default-rtdb.firebaseio.com",
+    "project_id": "cjam-a18c2",
+    "storage_bucket": "cjam-a18c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155175554695:android:f239e75b9a6a843797f222",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.com.unity.template.mobile2D"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGFtRBKfGAZM5hJWTarTmq_OGai_G_CjQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

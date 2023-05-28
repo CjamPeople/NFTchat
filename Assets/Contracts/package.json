@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@klaytn/contracts": "^1.0.6",
+    "@openzeppelin/contracts": "^4.9.0"
+  }
+}
