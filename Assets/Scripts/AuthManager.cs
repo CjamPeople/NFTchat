@@ -1,23 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Firebase.Auth;
+using Firebase.Database;
 using TMPro;
 
 public class AuthManager : MonoBehaviour
 {
-    [SerializeField] TMP_InputField emailInput;
-    [SerializeField] TMP_InputField passwordInput;
+    public TMP_InputField username;
+    public TMP_InputField emailInput;
+    public TMP_InputField passwordInput;
+    public TMP_InputField WalletAddress;
 
-    Firebase.Auth.FirebaseAuth auth;
+    FirebaseAuth auth;
+
+    public string uname;
+    public string wallet;
+    
+    public class Data
+    {
+        public string uname;
+        public string wallet;
+
+        public Data(string uname, string wallet)
+        {
+            this.uname = uname;
+            this.wallet = wallet;
+        }
+    }
+
+    private DatabaseReference databaseReference;
 
     void Awake()
     {
-        auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
+        auth = FirebaseAuth.DefaultInstance;
+        databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
     public void Signup()
     {
+        uname = username.text.Trim();
+        wallet = WalletAddress.text.Trim();
+        
         auth.CreateUserWithEmailAndPasswordAsync(emailInput.text, passwordInput.text).ContinueWith(
             task =>
             {
@@ -31,6 +56,11 @@ public class AuthManager : MonoBehaviour
                 }
             }
         );
+        
+        var data = new Data(uname, wallet);
+        string jsonData = JsonUtility.ToJson(data);
+
+        databaseReference.Child(emailInput.text).SetRawJsonValueAsync(jsonData);
         
     }
 

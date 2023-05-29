@@ -876,8 +876,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47072c9350426ac4e856ad6f46c5c79a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  username: {fileID: 1690549524}
   emailInput: {fileID: 221786584}
   passwordInput: {fileID: 1793449575}
+  WalletAddress: {fileID: 770831749}
+  uname: 
+  wallet: 
 --- !u!4 &419545568
 Transform:
   m_ObjectHideFlags: 0
